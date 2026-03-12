@@ -25,11 +25,11 @@ export function getPriorityLevel(score: number): "critical" | "high" | "medium" 
   return "low";
 }
 
-export const SAMPLE_DISASTERS: Disaster[] = [
+export const SAMPLE_DISASTERS: Disaster[] = ([
   {
     id: 1, location: "Mumbai, India", lat: 19.076, lng: 72.8777,
     population: 1240500, damage: 8, shortage: 9, priority: 0,
-    type: "Flood", status: "active", createdAt: "2026-03-12T08:30:00Z"
+    type: "Flood", status: "active" as const, createdAt: "2026-03-12T08:30:00Z"
   },
   {
     id: 2, location: "Kathmandu, Nepal", lat: 27.7172, lng: 85.324,
