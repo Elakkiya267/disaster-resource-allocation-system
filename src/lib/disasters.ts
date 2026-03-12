@@ -51,4 +51,4 @@ export const SAMPLE_DISASTERS: Disaster[] = ([
     population: 670000, damage: 7, shortage: 6, priority: 0,
     type: "Typhoon", status: "active", createdAt: "2026-03-12T06:00:00Z"
   },
-].map(d => ({ ...d, priority: calculatePriority(d.population, d.damage, d.shortage) }));
+] as const).map(d => ({ ...d, priority: calculatePriority(d.population, d.damage, d.shortage) }));
