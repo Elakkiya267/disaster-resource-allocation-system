@@ -4,8 +4,11 @@ interface AppSidebarProps {
   stats: {
     total: number;
     active: number;
+    monitoring: number;
+    resolved: number;
     totalAffected: number;
     avgPriority: number;
+    totalResourcesAllocated: number;
   };
 }
 

@@ -1,3 +1,11 @@
+export interface Resource {
+  id: number;
+  name: string;
+  type: "medical" | "food" | "shelter" | "rescue" | "transport";
+  quantity: number;
+  status: "available" | "allocated" | "deployed";
+}
+
 export interface Disaster {
   id: number;
   location: string;
@@ -10,6 +18,8 @@ export interface Disaster {
   type: string;
   status: "active" | "monitoring" | "resolved";
   createdAt: string;
+  resources?: Resource[];
+  assignedResources?: number; // count of resource units
 }
 
 export function calculatePriority(population: number, damage: number, shortage: number): number {
